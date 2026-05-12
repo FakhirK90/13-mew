@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>13 May - Tu Mera ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <img class="loader-gif" src="200w.gif" alt="Loading">
+        <div class="loader-text">Loading Something Special...</div>
+        <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    </div>
+
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Music Button -->
+    <div class="music-btn" onclick="toggleMusic()"><span class="m-icon">🎵</span></div>
+
+    <!-- Page Dots (for 2 main pages only) -->
+    <div class="page-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+    </div>
+
+    <!-- ===== PAGE 0: ASK QUESTION ===== -->
+    <div id="page0" class="page">
+        <!-- Video background -->
+        <video class="page-bg-video" autoplay muted loop playsinline>
+            <source src="YTDown_YouTube_particles-hearts-abstract-valentine-s-da_Media_0-qNLXW5VEc_001_1080p.mp4" type="video/mp4">
+        </video>
+        <div class="page-bg-overlay"></div>
+
+        <div class="fl-emoji" style="top:10%;left:10%;animation-delay:0s;">💕</div>
+        <div class="fl-emoji" style="top:20%;right:12%;animation-delay:1s;">✨</div>
+        <div class="fl-emoji" style="bottom:25%;left:8%;animation-delay:2s;">💖</div>
+        <div class="fl-emoji" style="top:40%;right:5%;animation-delay:1.5s;">🌸</div>
+        <div class="fl-emoji" style="bottom:15%;right:15%;animation-delay:.5s;">🦋</div>
+
+        <div class="ask-content">
+            <div class="ask-text">Hey My Future Wife 💖<br>Kiya Ap Janti He Aj Kya Hai? 🤔✨</div>
+            <div class="ask-buttons">
+                <button class="ask-btn yes" onclick="handleYes()">Yes 💕</button>
+                <button class="ask-btn no" onclick="handleNo()">No 🤷‍♀️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PAGE NO: 13 MAY REVEAL ===== -->
+    <div id="pageNo" class="page">
+        <div class="romantic-env"></div>
+
+        <!-- Animated corner glows -->
+        <div class="corner-glow tl"></div>
+        <div class="corner-glow tr"></div>
+        <div class="corner-glow bl"></div>
+        <div class="corner-glow br"></div>
+        <div class="side-glow left"></div>
+        <div class="side-glow right"></div>
+
+        <!-- Floating emojis -->
+        <div class="fl-emoji" style="top:5%;left:8%;animation-delay:0s;font-size:3rem;">💫</div>
+        <div class="fl-emoji" style="top:10%;right:8%;animation-delay:1.2s;font-size:3rem;">🌹</div>
+        <div class="fl-emoji" style="bottom:8%;left:12%;animation-delay:.5s;font-size:2.5rem;">💖</div>
+        <div class="fl-emoji" style="bottom:12%;right:10%;animation-delay:2s;font-size:2.5rem;">✨</div>
+        <div class="fl-emoji" style="top:40%;left:3%;animation-delay:1.8s;font-size:2rem;">🦋</div>
+        <div class="fl-emoji" style="top:35%;right:3%;animation-delay:.8s;font-size:2rem;">💕</div>
+
+        <!-- 13 May reveal -->
+        <div class="reveal-stage">
+            <div class="reveal-13">
+                <div class="boy">🚶‍♂️</div>
+                <div class="num">13</div>
+            </div>
+            <div class="reveal-may">
+                <div class="month">May</div>
+                <div class="girl">🚶‍♀️</div>
+            </div>
+        </div>
+
+        <!-- Video below -->
+        <div class="reveal-video" id="revealVideo">
+            <video autoplay muted loop playsinline>
+                <source src="YTDown_YouTube_Free-Green-Screen-Animation-Cartoon-Love_Media_oihlQtSZHF4_001_1080p.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+
+    <!-- ===== PAGE VIDEO: WhatsApp Video ===== -->
+    <div id="pageVideo" class="page">
+        <!-- Animated background -->
+        <div class="corner-glow tl"></div>
+        <div class="corner-glow tr"></div>
+        <div class="corner-glow bl"></div>
+        <div class="corner-glow br"></div>
+        <div class="side-glow left"></div>
+        <div class="side-glow right"></div>
+
+        <div class="fl-emoji" style="top:5%;left:6%;animation-delay:0s;font-size:2.5rem;">💖</div>
+        <div class="fl-emoji" style="top:8%;right:6%;animation-delay:1s;font-size:2.5rem;">✨</div>
+        <div class="fl-emoji" style="bottom:8%;left:10%;animation-delay:2s;font-size:2rem;">🌹</div>
+        <div class="fl-emoji" style="bottom:10%;right:8%;animation-delay:.5s;font-size:2rem;">💕</div>
+
+        <div class="video-cinema" id="videoCinema">
+            <div class="cinema-title">For You 💕✨</div>
+            <div class="cinema-frame">
+                <video id="whatsappVideo" playsinline>
+                    <source src="WhatsApp Video 2026-05-12 at 11.38.38 PM.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="video-next" id="videoNext">
+            <button class="next-btn" onclick="goToMain()">Continue ➜</button>
+        </div>
+    </div>
+
+    <!-- ===== PAGE YES: I LOVE YOU ===== -->
+    <div id="pageYes" class="page burst-zone">
+        <!-- Heart Video Background -->
+        <video class="page-bg-video" autoplay muted loop playsinline>
+            <source src="YTDown_YouTube_4K-Valentines-Day-Hearts-day-Animated-Vi_Media_OPyAS5YXM-o_001_1080p.mp4" type="video/mp4">
+        </video>
+        <div class="page-bg-overlay" style="background:rgba(0,0,0,.5);"></div>
+
+        <div class="fl-emoji" style="top:8%;left:12%;animation-delay:0s;">💕</div>
+        <div class="fl-emoji" style="top:15%;right:10%;animation-delay:1s;">✨</div>
+        <div class="fl-emoji" style="bottom:20%;left:10%;animation-delay:.7s;">🌹</div>
+        <div class="fl-emoji" style="bottom:12%;right:12%;animation-delay:1.8s;">💗</div>
+
+        <div class="yes-content">
+            <div class="yes-emoji">💝</div>
+            <div class="yes-ily">I Love You So Much ❤️</div>
+            <img class="yes-gif" src="giphy.gif" alt="Love GIF">
+            <div class="yes-sub" style="font-family:'Poppins',sans-serif;font-weight:300;font-size:1.4rem;">"Meri har dua me tu shamil hai,<br>Tu hai to sab kuch hai 💕✨"</div>
+            <button class="next-btn" onclick="goToMain()">Continue ➜</button>
+        </div>
+    </div>
+
+    <!-- ===== MAIN PAGE 1: I LOVE YOU ===== -->
+    <div id="mainPage1" class="page">
+        <!-- Heart Video Background -->
+        <video class="page-bg-video" autoplay muted loop playsinline>
+            <source src="YTDown_YouTube_4K-Valentines-Day-Hearts-day-Animated-Vi_Media_OPyAS5YXM-o_001_1080p.mp4" type="video/mp4">
+        </video>
+        <div class="page-bg-overlay" style="background:rgba(0,0,0,.5);"></div>
+
+        <div id="heartBurstZone" class="burst-zone" style="position:absolute;inset:0;pointer-events:none;z-index:5;"></div>
+        <div class="fl-emoji" style="top:5%;left:15%;animation-delay:0s;">☁️</div>
+        <div class="fl-emoji" style="top:12%;right:12%;animation-delay:1.5s;">⭐</div>
+        <div class="fl-emoji" style="bottom:20%;left:10%;animation-delay:.7s;">💜</div>
+        <div class="fl-emoji" style="top:35%;right:5%;animation-delay:2.2s;">💫</div>
+
+        <div class="p3-content">
+            <div class="p3-ily" data-anim>I Love You ❤️</div>
+            <img class="main-gif" src="giphy.gif" alt="Love GIF" data-anim>
+            <div class="tera-poem">
+                <p class="tera-intro" data-anim>Mere liye 13 date ziada important nahi hai,<br>Q keh main hamesha se... ✨</p>
+                <div class="tera-lines">
+                    <div class="t-line" data-anim><span class="t-num">13</span>, Tha 💕</div>
+                    <div class="t-line" data-anim><span class="t-num">13</span>, Hoon 💖</div>
+                    <div class="t-line" data-anim><span class="t-num">13</span>, He Rahunga ♾️❤️</div>
+                </div>
+            </div>
+            <button class="next-btn" data-anim onclick="nextPage()">Next ➜</button>
+        </div>
+    </div>
+
+    <!-- ===== MAIN PAGE 2: ROMANTIC QUOTES ===== -->
+    <div id="mainPage2" class="page">
+        <div class="fl-emoji" style="top:8%;left:8%;animation-delay:0s;font-size:3rem;">💖</div>
+        <div class="fl-emoji" style="top:15%;right:12%;animation-delay:1s;font-size:2.5rem;">🦋</div>
+        <div class="fl-emoji" style="bottom:15%;left:10%;animation-delay:2s;font-size:2.8rem;">💝</div>
+        <div class="fl-emoji" style="bottom:22%;right:8%;animation-delay:.5s;font-size:3rem;">💍</div>
+        <div class="fl-emoji" style="top:40%;left:5%;animation-delay:1.5s;font-size:2rem;">✨</div>
+
+        <div class="p4-content">
+            <div class="p4-title" data-anim>My Promises To You 💌</div>
+            <div class="quote-card"><span class="q-emoji">💕</span><p>You are my favorite destination — the only place my heart ever wants to be.</p></div>
+            <div class="quote-card"><span class="q-emoji">✨</span><p>Every moment with you feels magical — like the world stops just for us.</p></div>
+            <div class="quote-card"><span class="q-emoji">❤️</span><p>You are the peace my heart was searching for — my calm in every storm.</p></div>
+        </div>
+    </div>
+
+    <audio id="bgAudio" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
